@@ -1,0 +1,12 @@
+puts("vagrantfile.head")
+Vagrant.configure("2") do |config|
+  puts("vagrantfile.configure")
+  config.vm.box = "hashicorp/precise64"
+  config.vm.provider "ssh" do |r|
+    puts("vagrantfile.provider")
+    r.ssh.host = "192.168.11.87"
+    r.ssh.username = "vagrant"
+    r.provider "virtualbox"
+    puts("vagrantfile.provider.e")
+  end
+end
